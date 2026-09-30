@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-hpo-optimizer"
+version = "0.1.0"
+description = "General-purpose, multi-objective hyperparameter optimizer for LLM training, with a pluggable model adapter interface."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+keywords = ["hyperparameter", "optimization", "machine learning", "LLM", "NLP"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Typing :: Typed",
+]
+
+# Core framework needs only the standard library.
+dependencies = []
+
+[project.optional-dependencies]
+# pip install llm-hpo-optimizer[optuna]  -- enables method="optuna"
+optuna = ["optuna>=3.0"]
+# pip install llm-hpo-optimizer[nanogpt]  -- enables NanoGPTAdapter
+nanogpt = ["torch>=2.0", "numpy>=1.21"]
+# pip install llm-hpo-optimizer[dev]  -- full development environment
+dev = [
+    "optuna>=3.0",
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1",
+    "build>=1.0",
+    "twine>=5.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Anusha-pixel10/llm-hpo-optimizer"
+"Bug Tracker" = "https://github.com/Anusha-pixel10/llm-hpo-optimizer/issues"
+
+[project.scripts]
+"llm-hpo" = "llm_hpo_optimizer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"llm_hpo_optimizer" = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--tb=short -v"
+
+[tool.coverage.run]
+source = ["llm_hpo_optimizer"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true

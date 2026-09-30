@@ -1,0 +1,42 @@
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.coverage
+
+# Distribution archives
+*.tar.gz
+*.whl
+
+# Editor artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# mypy
+.mypy_cache/
