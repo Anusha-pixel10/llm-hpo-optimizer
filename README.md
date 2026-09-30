@@ -1,4 +1,6 @@
-# llm-hpo-optimizer
+# llm-hpo-optimizer now exists as a Python pip install library at: https://pypi.org/project/llm-hpo-optimizer/0.1.0/
+
+pip install llm-hpo-optimizer==0.1.0
 
 A general-purpose, **multi-objective hyperparameter optimization** library for LLM training.
 
