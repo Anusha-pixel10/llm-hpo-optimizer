@@ -1,4 +1,5 @@
-# llm-hpo-optimizer now exists as a Python pip install library at: https://pypi.org/project/llm-hpo-optimizer/0.1.0/
+# llm-hpo-optimizer 
+Now exists as a Python pip install library at: https://pypi.org/project/llm-hpo-optimizer/0.1.0/
 
 pip install llm-hpo-optimizer==0.1.0
 
